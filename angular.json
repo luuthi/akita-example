@@ -1,5 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "cbda3c59-9c5a-4398-9680-d9ea090d9814",
+    "defaultCollection": "@datorama/akita"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -31,9 +35,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.scss",
+              "./node_modules/materialize-css/dist/css/materialize.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/hammerjs/hammer.js",
+              "./node_modules/materialize-css/dist/js/materialize.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,6 +103,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []

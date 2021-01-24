@@ -1,0 +1,35 @@
+<section class="padding">
+  <ng-container *ngIf="items$ | async as items">
+    <table class="striped" *ngIf="items.length">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th>Remove</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{item.title}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.quantity}}</td>
+        <th>{{item.total| number}} <sup>đ</sup></th>
+        <th>
+          <mat-icon (click)="remove(item)">delete</mat-icon>
+        </th>
+      </tr>
+      </tbody>
+    </table>
+
+    <h3 *ngIf="!items.length">Your cart is empty</h3>
+
+    <h4 *ngIf="items.length" class="flex flex-end align-center">
+      <i class="material-icons medium mr5">credit_card</i>
+      Total: {{total$ | async| number}} <sup>đ</sup>
+    </h4>
+
+  </ng-container>
+
+</section>

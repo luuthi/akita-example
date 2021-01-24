@@ -1,0 +1,13 @@
+.row {
+  height: 100vh;
+}
+
+.login-form {
+  background-color: #dedede;
+  padding: 36px;
+  width: 400px;
+
+  .mat-form-field {
+    width: 100%;
+  }
+}

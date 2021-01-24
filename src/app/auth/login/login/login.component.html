@@ -1,0 +1,38 @@
+<div class="row padding"  fxLayout="row" fxLayoutAlign="center center" >
+  <form name="signInForm" [formGroup]="loginForm" class="login-form"  fxLayout="column" fxLayoutAlign="center center" (submit)="submit()" novalidate>
+
+    <div class="error-section" *ngIf="loginForm?.hasError('incorrect')">Thông tin đăng nhập
+      không chính xác
+    </div>
+
+    <mat-form-field appearance="legacy" >
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" autocomplete="off">
+      <mat-icon matSuffix class="secondary-text">person</mat-icon>
+      <mat-error *ngIf="loginForm?.get('email')?.hasError('required')">
+        Chưa nhập email
+      </mat-error>
+      <mat-error *ngIf="loginForm?.get('email')?.hasError('email')">
+        Email chưa đúng
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Mật khẩu</mat-label>
+      <input matInput type="password" formControlName="password" autocomplete="off">
+      <mat-icon matSuffix class="secondary-text">vpn_key</mat-icon>
+      <mat-error *ngIf="loginForm?.get('password')?.hasError('required')">
+        Chưa nhập mật khẩu
+      </mat-error>
+    </mat-form-field>
+
+    <div class="login-button">
+      <button mat-raised-button class="submit-button btn-primary" aria-label="LOGIN"
+              [disabled]="loginForm?.invalid">
+        Đăng nhập
+      </button>
+    </div>
+
+
+  </form>
+</div>
